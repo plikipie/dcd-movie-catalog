@@ -102,18 +102,22 @@ main {
 
 /* movie item */
 
-.movie_item {
+.movie-item {
   width: 100%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   border-radius: 8px;
   overflow: hidden;
 }
 
-.movie_item__header {
+.movie-item__header {
   position: relative;
 }
 
-.movie_item .movie_item__header .movie_item__header__rating {
+.movie-item .movie-item__header .movie-item__header__poster {
+  width: 100%;
+}
+
+.movie-item .movie-item__header .movie-item__header__rating {
   position: absolute;
   padding: 8px;
   bottom: 20px;
@@ -123,27 +127,27 @@ main {
   color: white;
 }
 
-.movie_item
-  .movie_item__header
-  .movie_item__header__rating
-  .movie_item__header__rating__score {
+.movie-item
+  .movie-item__header
+  .movie-item__header__rating
+  .movie-item__header__rating__score {
   margin-left: 10px;
 }
 
-.movie_item .movie_item__content {
+.movie-item .movie-item__content {
   padding: 16px;
 }
 
-.movie_item .movie_item__content h3 {
+.movie-item .movie-item__content h3 {
   margin: 0 0 10px 0;
 }
 
-.movie_item .movie_item__content h3 a {
+.movie-item .movie-item__content h3 a {
   color: #db0000;
   text-decoration: none;
 }
 
-.movie_item .movie_item__content p {
+.movie-item .movie-item__content p {
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;

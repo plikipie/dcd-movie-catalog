@@ -1,13 +1,18 @@
 import TheMovieDbSource from '../../data/themoviedb-source'
+import { createMovieDetailTemplate } from '../templates/template-creator'
+import UrlParser from '../../routes/url-parser'
 
 const Detail = {
   async render () {
-    return `<h1>Detail Page</h1>`
+    return `
+    <div id="movie" class="movie"></div>`
   },
 
   async afterRender () {
-    const movies = await TheMovieDbSource.detailMovies()
-    console.log(movies)
+    const url = UrlParser.parseActiveUrlWithoutCombiner()
+    const movie = await TheMovieDbSource.detailMovie(url.id)
+    const moviesContainer = document.querySelector('#movie')
+    moviesContainer.innerHTML = createMovieDetailTemplate(movie)
   }
 }
 
