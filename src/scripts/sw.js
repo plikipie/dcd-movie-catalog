@@ -1,15 +1,15 @@
+import 'regenerator-runtime'
+import cacheHelper from './utils/cache-helper'
+
+const { assets } = global.serviceWorkerOption
 self.addEventListener('install', (event) => {
-  console.log('Installing Service Worker...')
-  // TODO: Caching App Shell Resourse
+  event.waitUntil(cacheHelper.cachingAppShell([...assets, '/']))
 })
 
 self.addEventListener('activate', (event) => {
-  console.log('Activating Service Worker...')
-  // TODO: Delete Old Caches
+  event.waitUntil(cacheHelper.deleteOldCache())
 })
 
 self.addEventListener('fetch', (event) => {
-  console.log(event.request)
-
-  event.respondWith(fetch(event.request))
+  event.respondWith(cacheHelper.revalidateCache(event.request))
 })
