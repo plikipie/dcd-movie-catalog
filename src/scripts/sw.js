@@ -3,7 +3,7 @@ import cacheHelper from './utils/cache-helper'
 
 const { assets } = global.serviceWorkerOption
 self.addEventListener('install', (event) => {
-  event.waitUntil(cacheHelper.cachingAppShell([...assets, '/']))
+  event.waitUntil(cacheHelper.cachingAppShell([...assets, './']))
 })
 
 self.addEventListener('activate', (event) => {
