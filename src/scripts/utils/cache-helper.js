@@ -37,7 +37,6 @@ const cacheHelper = {
     const cache = await this._openCache()
     cache.add(request)
   }
-
 }
 
 export default cacheHelper
